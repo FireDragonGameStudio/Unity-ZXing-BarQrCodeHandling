@@ -1,6 +1,6 @@
 # Barcode and QR Code handling in Unity with ZXing.NET
 
-This is the corresponding github repository for the video tutorial series about "Barcode and QRCode in Unity with ZXing.NET - The ultimate tutorial". Using additional functionality with ZXing.NET, AR Foundation and OpenXR. :)
+This is the corresponding github repository for the video tutorial series about "Barcode and QRCode in Unity with ZXing.NET - A guide for Standalone, Android, WebGL and Hololens". Using additional functionality with ZXing.NET, AR Foundation and OpenXR. :)
 
 Tutorial Video - https://www.youtube.com/watch?v=tJXvynhbmpg
 
