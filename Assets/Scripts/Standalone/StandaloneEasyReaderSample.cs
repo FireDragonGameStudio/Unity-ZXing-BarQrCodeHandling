@@ -5,6 +5,10 @@ public class StandaloneEasyReaderSample : MonoBehaviour {
 
     [SerializeField]
     private string lastResult;
+    [SerializeField]
+    private bool logAvailableWebcams;
+    [SerializeField]
+    private int selectedWebcamIndex;
 
     private WebCamTexture camTexture;
     private Color32[] cameraColorData;
@@ -22,6 +26,7 @@ public class StandaloneEasyReaderSample : MonoBehaviour {
     private Result result;
 
     private void Start() {
+        LogWebcamDevices();
         SetupWebcamTexture();
         PlayWebcamTexture();
 
@@ -42,12 +47,14 @@ public class StandaloneEasyReaderSample : MonoBehaviour {
     }
 
     private void Update() {
-        // decoding from camera image
-        camTexture.GetPixels32(cameraColorData); // -> performance heavy method 
-        result = barcodeReader.Decode(cameraColorData, width, height); // -> performance heavy method
-        if (result != null) {
-            lastResult = result.Text + " " + result.BarcodeFormat;
-            print(lastResult);
+        if (camTexture.isPlaying) {
+            // decoding from camera image
+            camTexture.GetPixels32(cameraColorData); // -> performance heavy method 
+            result = barcodeReader.Decode(cameraColorData, width, height); // -> performance heavy method
+            if (result != null) {
+                lastResult = result.Text + " " + result.BarcodeFormat;
+                print(lastResult);
+            }
         }
     }
 
@@ -62,8 +69,18 @@ public class StandaloneEasyReaderSample : MonoBehaviour {
         camTexture.Stop();
     }
 
+    private void LogWebcamDevices() {
+        if (logAvailableWebcams) {
+            WebCamDevice[] devices = WebCamTexture.devices;
+            for (int i = 0; i < devices.Length; i++) {
+                Debug.Log(devices[i].name);
+            }
+        }
+    }
+
     private void SetupWebcamTexture() {
-        camTexture = new WebCamTexture();
+        string selectedWebcamDeviceName = WebCamTexture.devices[selectedWebcamIndex].name;
+        camTexture = new WebCamTexture(selectedWebcamDeviceName);
         camTexture.requestedHeight = Screen.height;
         camTexture.requestedWidth = Screen.width;
     }

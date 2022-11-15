@@ -377,6 +377,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lastResult: 
+  logAvailableWebcams: 1
+  selectedWebcamIndex: 0
 --- !u!4 &1381120315
 Transform:
   m_ObjectHideFlags: 0
