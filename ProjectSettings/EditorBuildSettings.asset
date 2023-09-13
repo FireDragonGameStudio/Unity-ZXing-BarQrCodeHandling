@@ -5,10 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/StandaloneSample.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/AndroidSample.unity
     guid: ec24752643dcf5a46b0996ae12d9573b
   - enabled: 0
@@ -19,5 +19,6 @@ EditorBuildSettings:
     guid: de6efab6695e87e41b3dc9fb156468ce
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: f6f9ec74d3f993043a8075dac45dfb38, type: 2}
+    com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: b9ff1d25938e4134b9f0450be2994e0e, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 490e77bae898dac44b1aaff110b2f4cf, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: de0b654d620519d48aea6b3799378904, type: 2}

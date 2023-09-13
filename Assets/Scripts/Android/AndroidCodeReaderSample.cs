@@ -7,10 +7,6 @@ using ZXing;
 public class AndroidCodeReaderSample : MonoBehaviour {
 
     [SerializeField]
-    private ARSession session;
-    [SerializeField]
-    private ARSessionOrigin sessionOrigin;
-    [SerializeField]
     private ARCameraManager cameraManager;
     [SerializeField]
     private string lastResult;
